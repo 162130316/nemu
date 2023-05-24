@@ -6,13 +6,24 @@ make_EHelper(mov) {
 }
 
 make_EHelper(push) {
-  TODO();
+  rtl_push(&(id_dest->val));
 
   print_asm_template1(push);
 }
 
 make_EHelper(pop) {
-  TODO();
+  rtl_pop(&t0);
+  switch (id_dest->type)
+  {
+  case OP_TYPE_REG:
+    rtl_sr(id_dest->reg,id_dest->width,&t0);
+    break;
+  case OP_TYPE_MEM:
+    rtl_sm(&id_dest->addr,id_dest->width,&t0);
+    break;
+  default:
+    assert(0);
+  }
 
   print_asm_template1(pop);
 }
