@@ -8,10 +8,11 @@ make_EHelper(inv);
 make_EHelper(nemu_trap);
 make_EHelper(call);
 make_EHelper(push);
-make_EHelper(sub);
-make_EHelper(nop);
 make_EHelper(pop);
+make_EHelper(sub);
+make_EHelper(xor);
 make_EHelper(ret);
+make_EHelper(nop);
 make_EHelper(lea);
 make_EHelper(and);
 make_EHelper(jmp);
@@ -53,3 +54,6 @@ make_EHelper(iret);
 make_EHelper(mov_r2cr);
 make_EHelper(mov_cr2r);
 make_EHelper(xor);
+make_EHelper(reti);
+
+
