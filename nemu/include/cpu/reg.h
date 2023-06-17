@@ -48,6 +48,11 @@ typedef struct {
   //rtlreg_t eax, ecx, edx, ebx, esp, ebp, esi, edi;
 
   vaddr_t eip;
+  struct {
+      uint32_t base;  
+      uint16_t limit; 
+  }idtr;
+  uint16_t cs;
 
 } CPU_state;
 
